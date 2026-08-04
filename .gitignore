@@ -1,0 +1,83 @@
+# VJSOS .gitignore
+# See https://www.toptal.com/git/gitignore-best-practices
+
+# Build output
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+*.lib
+*.jar
+*.class
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Obsidian (local config - keep synced, but ignore temp files)
+.obsidian/workspace.json
+.obsidian/graph.json
+.obsidian/templates/
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/icons/
+
+# Blender
+*.blend1
+*.blend2
+blender_output/
+
+# Video/audio
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+*.aac
+*.m4a
+*.flac
+*.ogg
+
+# Assets (keep in git LFS or external)
+assets/
+episodes/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# VJSOS notes
+sessions/*.tmp
