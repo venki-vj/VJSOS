@@ -1,7 +1,7 @@
 ---
 title: VJSOS — Master Context for Local LLM
-date: 2026-08-04
-version: 0.1.0
+date: 2026-08-05
+version: 0.1.1
 project: VJSOS
 tags: [vjsos, architecture, youtube, android, ai, startup, master-context]
 ---
