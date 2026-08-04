@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      - name: Generate changelog snippet
+        id: changelog
+        run: |
+          # Extract the section for this version from CHANGELOG.md
+          awk -v v="${{ steps.version.outputs.VERSION }}" '
+            /^## \[/ { in_section = ($0 ~ v) }
+            in_section { print }
+          ' CHANGELOG.md > release-notes.md || echo "No changelog section found" > release-notes.md
+          cat release-notes.md
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.VERSION }}
+          name: Release ${{ steps.version.outputs.VERSION }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: false
