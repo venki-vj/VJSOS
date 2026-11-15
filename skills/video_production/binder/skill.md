@@ -1,0 +1,111 @@
+---
+skill_id: "video_production"
+version: "1.0.0"
+owner: "video-agent@media@vjsos-ai"
+domain: "media"
+description: "Transform a script + style guide into a timed shot list for local video rendering (Remotion/ffmpeg)"
+type: "generation"
+inputs:
+  script:
+    type: "string"
+    required: true
+    description: "Full script text with scenes, dialogue, and timing cues"
+  style_guide:
+    type: "string"
+    required: true
+    description: "Visual style, brand colors, font specs, GFX templates, transition rules"
+  duration_target:
+    type: "string"
+    required: true
+    description: "Target runtime (e.g. '90s', '2:30')"
+  platform:
+    type: "string"
+    required: false
+    description: "Target platform: youtube, linkedin, twitter, tiktok, instagram"
+    default: "youtube"
+  aspect_ratio:
+    type: "string"
+    required: false
+    description: "Output aspect ratio"
+    default: "16:9"
+outputs:
+  shot_list:
+    type: "object"
+    required: true
+    description: "JSON shot list with all render instructions"
+    properties:
+      metadata:
+        type: "object"
+        properties:
+          total_duration: {type: "string"}
+          platform: {type: "string"}
+          aspect_ratio: {type: "string"}
+          created_at: {type: "string"}
+      shots:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            id: {type: "string"}
+            type: {type: "string", enum: ["remotion", "ffmpeg", "static", "screen_capture", "talking_head"]}
+            start: {type: "number"}
+            end: {type: "number"}
+            duration: {type: "number"}
+            visual_prompt: {type: "string"}
+            audio_cue: {type: "string"}
+            composition: {type: "string"}
+            props: {type: "object"}
+            ffmpeg_filter: {type: "string"}
+            gfx_overlay: {type: "object"}
+            transition_in: {type: "string"}
+            transition_out: {type: "string"}
+examples:
+  - name: "Phase 2 Walkthrough"
+    input:
+      script: "Cold open: git log shows Phase 2 commits. Architecture: 5 services integrate. Skills: CLI demo. Plugins: install. Message Bus: pub/sub. Analytics: metrics. Learning: patterns. Integration test: all pass."
+      style_guide: "Dark terminal (One Dark Pro), teal accent (#00D4AA), JetBrains Mono 14pt, 3840x2160. GFX: architecture diagram, section titles, code callouts, test summary overlay."
+      duration_target: "13:30"
+      platform: "youtube"
+      aspect_ratio: "16:9"
+    output:
+      shot_list:
+        metadata:
+          total_duration: "13:30"
+          platform: "youtube"
+          aspect_ratio: "16:9"
+          created_at: "2026-08-07T10:00:00Z"
+        shots:
+          - id: "cold_open_01"
+            type: "screen_capture"
+            start: 0
+            end: 3
+            duration: 3
+            visual_prompt: "Terminal: git log --oneline -5 showing 5 Phase 2 commits"
+            audio_cue: "MUS: INTRO_STING (2s pulse + teal flash)"
+            composition: "terminal_capture"
+            props:
+              command: "git log --oneline -5"
+              theme: "one-dark-pro"
+              font: "JetBrains Mono 14pt"
+            transition_in: "hard_cut"
+            transition_out: "hard_cut"
+          - id: "cold_open_02"
+            type: "screen_capture"
+            start: 3
+            end: 7
+            duration: 4
+            visual_prompt: "5 terminal panes tiled (tmux) — each running a component test"
+            audio_cue: "VO: 'Five infrastructure services. Zero integration bugs.'"
+            composition: "terminal_capture"
+            props:
+              command: "tmux split-window -h 'python tests/test_phase2_integration.py'"
+              layout: "5-pane-grid"
+            transition_in: "hard_cut"
+            transition_out: "hard_cut"
+dependencies: []
+tests:
+  - test_shot_list_generation.yaml
+qa_status: "pending"
+changelog: |
+  - v1.0.0: Initial release — script → shot list for Phase 2 walkthrough
+---

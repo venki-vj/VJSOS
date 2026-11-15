@@ -1,0 +1,27 @@
+{
+  "proposal_id": "prop_1794742977_1cc617b0",
+  "title": "Optimize engineering tasks",
+  "type": "process_change",
+  "description": "Reduce average duration from 10s to 5s",
+  "rationale": "Learning engine detected optimization opportunity",
+  "priority": "high",
+  "status": "approved",
+  "created_by": "learning_engine@vjsos-ai",
+  "created_at": "2026-11-15T11:42:57.806248Z",
+  "updated_at": "2026-11-15T11:42:57.818392Z",
+  "pattern_id": null,
+  "affected_components": [
+    "engineering",
+    "analytics"
+  ],
+  "estimated_impact": {},
+  "implementation_plan": {},
+  "verification_criteria": {},
+  "governor_decision": "approved",
+  "decision_rationale": "",
+  "approved_by": "governor@vjsos-ai",
+  "approved_at": "2026-11-15T11:42:57.818365Z",
+  "implemented_at": null,
+  "verified_at": null,
+  "tags": []
+}

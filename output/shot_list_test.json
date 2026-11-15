@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "total_duration": "12s",
+    "platform": "youtube",
+    "aspect_ratio": "16:9"
+  },
+  "shots": [
+    {
+      "id": "shot_01_cold_open",
+      "type": "screen_capture",
+      "start": 0,
+      "end": 4,
+      "duration": 4,
+      "visual_prompt": "Terminal: git log shows Phase 2 commits",
+      "audio_cue": "MUS: intro sting",
+      "resolution": "1280x720",
+      "composition": "terminal_capture",
+      "props": {"command": "git log --oneline -5", "theme": "one-dark-pro"},
+      "transition_in": "hard_cut",
+      "transition_out": "hard_cut"
+    },
+    {
+      "id": "shot_02_arch",
+      "type": "screen_capture",
+      "start": 4,
+      "end": 8,
+      "duration": 4,
+      "visual_prompt": "5 terminal panes tiled, each running a component test",
+      "audio_cue": "VO: 'Five infrastructure services. Zero integration bugs.'",
+      "resolution": "1280x720",
+      "composition": "terminal_capture",
+      "props": {"layout": "5-pane-grid"},
+      "transition_in": "hard_cut",
+      "transition_out": "hard_cut"
+    },
+    {
+      "id": "shot_03_outro",
+      "type": "screen_capture",
+      "start": 8,
+      "end": 12,
+      "duration": 4,
+      "visual_prompt": "Integration test summary overlay with teal checkmark",
+      "audio_cue": "SFX: success chime",
+      "resolution": "1280x720",
+      "composition": "terminal_capture",
+      "props": {"test": "integration"},
+      "transition_in": "fade",
+      "transition_out": "fade"
+    }
+  ]
+}

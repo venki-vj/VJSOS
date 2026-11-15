@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-08-07T00:00:00Z",
+  "description": "VJSOS-AI Plugin Registry — lists available plugins and their status",
+  "plugins": {
+    "github@v1.2.0": {
+      "name": "GitHub Integration",
+      "path": "github/",
+      "type": "api_integration",
+      "status": "available",
+      "auth_method": "oauth",
+      "capabilities": ["read_repositories", "manage_pull_requests", "trigger_workflows"],
+      "governor_approval_required": true,
+      "description": "GitHub API integration for CI/CD, repository management, and workflow triggering"
+    },
+    "obsidian@v1.0.0": {
+      "name": "Obsidian Integration",
+      "path": "obsidian/",
+      "type": "api_integration",
+      "status": "available",
+      "auth_method": "api_key",
+      "capabilities": ["read_notes", "write_notes", "manage_vaults"],
+      "governor_approval_required": true,
+      "description": "Obsidian local API integration for knowledge management"
+    },
+    "youtube@v1.1.0": {
+      "name": "YouTube Publishing",
+      "path": "youtube/",
+      "type": "api_integration",
+      "status": "available",
+      "auth_method": "oauth",
+      "capabilities": ["upload_videos", "manage_playlists", "read_analytics"],
+      "governor_approval_required": true,
+      "description": "YouTube Data API for media publishing workflows",
+      "child_safety_required": true
+    },
+    "spotify@v1.0.0": {
+      "name": "Spotify Publishing",
+      "path": "spotify/",
+      "type": "api_integration",
+      "status": "available",
+      "auth_method": "oauth",
+      "capabilities": ["upload_podcasts", "manage_shows"],
+      "governor_approval_required": true,
+      "description": "Spotify for Podcasters API integration"
+    },
+    "blender@v1.0.0": {
+      "name": "Blender Integration",
+      "path": "blender/",
+      "type": "render_engine",
+      "status": "available",
+      "auth_method": "ssh",
+      "capabilities": ["render_animation", "export_assets", "run_scripts"],
+      "governor_approval_required": true,
+      "description": "Blender Python API integration for animation rendering and asset export"
+    },
+    "vault@v1.0.0": {
+      "name": "HashiCorp Vault",
+      "path": "vault/",
+      "type": "secrets_management",
+      "status": "available",
+      "auth_method": "token",
+      "capabilities": ["read_secrets", "write_secrets", "rotate_tokens"],
+      "governor_approval_required": true,
+      "description": "HashiCorp Vault integration for secure credential management"
+    }
+  },
+  "standards": {
+    "interface_version": "vjsos-ai-plugin-v1",
+    "manifest_schema": "plugins/common_interface.md",
+    "security_review_required": true,
+    "qa_status_required": true
+  }
+}

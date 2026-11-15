@@ -1,0 +1,196 @@
+{
+  "project": {
+    "title": "Alex and Jack - Playtime Adventure",
+    "type": "3D animated short",
+    "duration_seconds": 10,
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "frame_rate": 24,
+    "visual_style": "high-quality stylized 3D animated film",
+    "tone": "fun, warm, energetic, wholesome"
+  },
+
+  "character_references": {
+    "alex": {
+      "reference": "Alex character sheet",
+      "identity_lock": true,
+      "description": "Young teenage boy with spiky brown hair, large black rectangular glasses, expressive brown eyes, friendly smile, orange and black hoodie, dark pants and orange-white sneakers.",
+      "personality": [
+        "curious",
+        "friendly",
+        "playful",
+        "energetic"
+      ],
+      "important_constraints": [
+        "Do not redesign Alex.",
+        "Keep the same hairstyle, glasses, facial proportions, clothing colors and body proportions.",
+        "Maintain consistent appearance throughout every frame."
+      ]
+    },
+
+    "jack": {
+      "reference": "Jack character sheet",
+      "identity_lock": true,
+      "description": "Small playful Jack Russell Terrier puppy with white fur, warm brown patches around the eyes and ears, floppy brown ears, large expressive eyes, black nose and fluffy tail.",
+      "personality": [
+        "playful",
+        "curious",
+        "loyal",
+        "energetic"
+      ],
+      "important_constraints": [
+        "Do not redesign Jack.",
+        "Keep the same fur pattern, brown facial markings, ear shape, eye proportions and body proportions.",
+        "Maintain consistent appearance throughout every frame."
+      ]
+    }
+  },
+
+  "environment": {
+    "location": "large green neighborhood playground",
+    "time": "late afternoon",
+    "weather": "clear and pleasant",
+    "background": [
+      "green grass",
+      "small trees",
+      "colorful playground equipment",
+      "wooden benches",
+      "soft distant houses",
+      "warm sunlight"
+    ],
+    "atmosphere": "safe, cheerful, cinematic children's animation"
+  },
+
+  "story": {
+    "summary": "Alex and Jack spend a joyful afternoon playing together on a grassy playground.",
+    "relationship": "best friends",
+    "main_activity": "playing with a colorful ball"
+  },
+
+  "timeline": [
+    {
+      "time": "0-2s",
+      "action": "Alex walks onto the grassy playground while Jack runs excitedly beside him.",
+      "animation": "natural child walking motion and energetic puppy running",
+      "camera": "wide establishing shot slowly moving forward"
+    },
+
+    {
+      "time": "2-4s",
+      "action": "Alex gently kicks a colorful ball across the grass. Jack immediately notices it and excitedly chases after it.",
+      "animation": "Alex swings his leg naturally and kicks the ball; Jack accelerates after the ball with playful puppy movement.",
+      "camera": "medium tracking shot following the ball and Jack"
+    },
+
+    {
+      "time": "4-6s",
+      "action": "Jack catches up to the ball, playfully grabs it and runs back toward Alex.",
+      "animation": "ears and tail bounce naturally while running; puppy looks happy and excited.",
+      "camera": "low-angle tracking shot following Jack"
+    },
+
+    {
+      "time": "6-8s",
+      "action": "Jack drops the ball near Alex. Alex laughs, bends down and gently pets Jack.",
+      "animation": "Alex crouches naturally and scratches Jack behind the ears; Jack wags his tail enthusiastically.",
+      "camera": "medium close-up with gentle cinematic camera movement"
+    },
+
+    {
+      "time": "8-10s",
+      "action": "Alex throws the ball again. Jack jumps excitedly and runs after it while Alex runs behind him laughing.",
+      "animation": "energetic running, playful jumping and exaggerated but believable cartoon motion.",
+      "camera": "wide cinematic tracking shot ending with both characters running across the playground"
+    }
+  ],
+
+  "animation_direction": {
+    "alex": {
+      "movement": "natural teenage body mechanics with slightly exaggerated cartoon animation",
+      "facial_animation": "frequent smiling, laughing and excited expressions",
+      "body_language": "relaxed, playful and energetic"
+    },
+
+    "jack": {
+      "movement": "energetic puppy movement with realistic weight and exaggerated cartoon charm",
+      "facial_animation": "happy eyes, open-mouth smile and excited expressions",
+      "secondary_motion": [
+        "floppy ears bounce during running",
+        "tail wags continuously",
+        "fur reacts subtly to movement"
+      ]
+    }
+  },
+
+  "camera": {
+    "style": "cinematic 3D animation",
+    "movement": [
+      "slow establishing push-in",
+      "tracking shots",
+      "low-angle puppy tracking",
+      "medium character close-up",
+      "wide ending shot"
+    ],
+    "depth_of_field": "moderate cinematic depth of field",
+    "motion_blur": "subtle natural motion blur",
+    "composition": "keep both characters clearly visible whenever they interact"
+  },
+
+  "lighting": {
+    "style": "warm late-afternoon sunlight",
+    "key_light": "soft golden sunlight",
+    "fill_light": "soft ambient outdoor light",
+    "rim_light": "subtle sunlight rim around characters",
+    "shadows": "soft natural shadows"
+  },
+
+  "rendering": {
+    "quality": "high",
+    "style": "premium stylized 3D animation",
+    "materials": "clean physically based materials",
+    "fur": "soft detailed puppy fur",
+    "skin": "smooth stylized skin",
+    "clothing": "detailed fabric materials",
+    "global_illumination": true
+  },
+
+  "continuity_rules": [
+    "Alex must remain visually identical throughout the entire video.",
+    "Jack must remain visually identical throughout the entire video.",
+    "Do not change character clothing.",
+    "Do not change hairstyles.",
+    "Do not change fur markings.",
+    "Do not change character age or body proportions.",
+    "Do not introduce additional main characters.",
+    "The same playground must remain visually consistent.",
+    "The ball must remain the same color and design.",
+    "Maintain consistent lighting direction.",
+    "Maintain consistent 3D animation style."
+  ],
+
+  "negative_prompt": [
+    "character redesign",
+    "different hairstyle",
+    "different glasses",
+    "different clothing",
+    "different fur pattern",
+    "different dog breed",
+    "realistic human",
+    "photorealistic style",
+    "anime style",
+    "extra limbs",
+    "extra fingers",
+    "deformed hands",
+    "deformed face",
+    "deformed dog anatomy",
+    "duplicate characters",
+    "floating objects",
+    "unstable background",
+    "flickering textures",
+    "inconsistent character identity",
+    "frame-to-frame character changes",
+    "unnatural movement",
+    "jerky animation",
+    "camera shake"
+  ]
+}

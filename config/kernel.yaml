@@ -1,0 +1,58 @@
+# VJSOS-AI Kernel Configuration
+# This file defines the core system configuration for the AI Operating System
+
+governor:
+  constitution_path: "docs/AI_CONSTITUTION.md"
+  decision_log_path: "logs/governor_decisions.json"
+
+orchestrator:
+  max_qa_cycles: 3
+  default_context_budget: 8000
+  correlation_id_ttl_hours: 24
+
+context_engine:
+  relevance_weights:
+    domain_match: 0.4
+    recency: 0.2
+    frequency: 0.2
+    explicit_reference: 0.2
+  max_context_tokens: 16000
+
+memory_engine:
+  tiers:
+    session:
+      ttl_hours: 24
+      max_entries: 1000
+    agent:
+      ttl_days: 180
+      dedup_threshold: 0.95
+    department:
+      ttl: null  # infinite
+      dedup_threshold: 0.95
+    global:
+      ttl: null
+      dedup_threshold: 0.95
+
+qa_engine:
+  rubric_weights:
+    accuracy: 0.30
+    completeness: 0.20
+    documentation: 0.15
+    tests: 0.20
+    constitution_compliance: 0.15
+  max_feedback_cycles: 3
+
+event_bus:
+  max_message_size_kb: 256
+  dead_letter_enabled: true
+  dlq_max_retries: 3
+
+analytics:
+  metrics_interval_seconds: 60
+  alert_cooldown_minutes: 5
+  dashboard_cache_ttl_seconds: 300
+
+learning:
+  pattern_detection_threshold: 0.8
+  improvement_proposal_timeout_hours: 168
+  knowledge_base_path: "memory/global/knowledge_base.json"

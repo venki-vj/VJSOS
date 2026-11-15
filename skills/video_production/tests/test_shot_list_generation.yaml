@@ -1,0 +1,31 @@
+---
+# Test suite for the video_production skill.
+# Schema matches skills/skill_tester.py: a top-level `tests:` list where each
+# case renders the skill prompt with `inputs` and asserts on the result.
+version: 1
+tests:
+  - name: "prompt_renders_with_variables"
+    inputs:
+      script: "Cold open: git log shows Phase 2 commits."
+      style_guide: "Dark terminal (One Dark Pro), teal accent #00D4AA, JetBrains Mono 14pt."
+      duration_target: "90s"
+      platform: "youtube"
+      aspect_ratio: "16:9"
+    assertions:
+      - field: "prompt_rendered"
+        operator: "equals"
+        value: true
+    expected:
+      contains:
+        # Structural keywords every video_production prompt must include
+        # (note: the prompt uses "shot list" with a space, not "shot_list")
+        - "shot list"
+        - "metadata"
+        - "shots"
+        - "visual_prompt"
+        - "audio_cue"
+        - "transition_in"
+        # Injected variable values must have been substituted into the prompt
+        - "Phase 2 commits"
+        - "90s"
+        - "youtube"
